@@ -33,17 +33,6 @@ class Validator {
     return userSchema.validate(user);
   }
 
-  static validateCar(car) {
-    let carSchema = Joi.object({
-      plateNumber: Joi.string().regex(/^[A-Z0-9]*$/).required(),
-      seats: Joi.string().pattern(/^[0-9]+$/).required(),
-      owner: Joi.string().required(),
-      yellowCardNumber: Joi.string().required()
-    });
-    return carSchema.validate(car);
-  }
-
-
   
 }
 
