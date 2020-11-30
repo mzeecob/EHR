@@ -1,7 +1,7 @@
 {
-  "name": "e-insurance",
+  "name": "EHR",
   "version": "1.0.0",
-  "description": "e-insurance is system which will easy the process of buying insurance of properties using web application",
+  "description": "EHR is system which will easy the process of patient recording in health care organization like hospitals and heath centers",
   "main": "index.js",
   "scripts": {
     "start": "nodemon --exec babel-node ./server",
@@ -13,19 +13,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mzeecob/e-insurance-backend.git"
+    "url": "git+https://github.com/mzeecob/EHR"
   },
   "keywords": [
-    "insurance",
+    "EHR",
     "in",
     "rwanda"
   ],
   "author": "Regis",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mzeecob/e-insurance-backend/issues"
+    "url": "https://github.com/mzeecob/EHR"
   },
-  "homepage": "https://github.com/mzeecob/e-insurance-backend#readme",
+  "homepage": "https://github.com/mzeecob/EHR",
   "dependencies": {
     "@babel/polyfill": "^7.7.0",
     "@babel/runtime": "^7.7.6",

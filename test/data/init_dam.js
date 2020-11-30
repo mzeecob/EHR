@@ -1,5 +1,5 @@
-import Insurance from "../../models/Insurance"
-import Car from "../../models/Car";
+import Patient from "../../models/Patient"
+
 import User from "../../models/User";
 import auth from "../../util/auth";
 
@@ -9,17 +9,13 @@ class DummyData {
     // create new dummy data if there are not available
     static async createDummyData() {
 
-        const insurance = new Insurance({name: 'A+', descrption: 'good one'});
-        await insurance.save();
+        const patient = new Patient({firstname: 'Nehemia', lastname: 'Mukuruwabo', email: 'test2@gmail.com', gender: "male", phone: '123', record: 'abdominal pain'});
+        await patient.save();
 
 
         const user = new User({ firstname: 'Augistin', lastname: 'Mushumba', email: 'test1@gmail.com', phone: '456', password: auth.hashPassword('test1') });
         await user.save();
 
-        const userTo = await User.findOne({email: 'test1@gmail.com'});
-        const car = new Car ({ plateNumber: 'RAD123E', seats: '5', owner: userTo._id, type: 'jeep', yellowCardNumber: 'RAD455' });
-
-        await car.save();
 
     }
 
@@ -29,8 +25,7 @@ class DummyData {
         try {
             // remove any data that has been added 
             await User.collection.drop();
-            await Car.collection.drop();
-            await Insurance.collection.drop();
+            await Patient.collection.drop();
             console.log("***Existing data have been removed****")
 
             // add initual data

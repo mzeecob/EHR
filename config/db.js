@@ -1,9 +1,7 @@
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import dum from "../test/data/init_dam";
-import Car from "../models/Car";
-import User from "../models/User";
-import Insurance from "../models/Insurance";
+
 
 
 dotenv.config();

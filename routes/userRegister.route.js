@@ -1,9 +1,8 @@
 
 import express from 'express';
-import insuranceController from '../controllers/userController'
+import userRegister from '../controllers/userController'
 var router = express.Router();
 
-router.post("/", insuranceController.signup)
-// router.get("/:name", insuranceController.oneInsurance)
+router.post("/", userRegister.signup)
 
 export default router;

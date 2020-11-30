@@ -1,4 +1,4 @@
-# e-insurance-backend
+# EHR
 
 ---
 ## Requirements
@@ -9,7 +9,7 @@ For development, you will only need Node.js and a node global package, NPM, inst
 
 ## Installation
     $ git clone https://github.com/rutaks/dev-social
-    $ cd dev-social
+    $ cd EHR
     $ npm install
 
 ## Start the project
