@@ -1,0 +1,52 @@
+{
+  "name": "e-insurance",
+  "version": "1.0.0",
+  "description": "e-insurance is system which will easy the process of buying insurance of properties using web application",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --exec babel-node ./server",
+    "dev": "nodemon --exec babel-node ./config/db.js",
+    "release": "npm run clean && npm run build && npm run serve",
+    "clean": "rm -rf dist && mkdir dist",
+    "build": "babel . -s -D -d dist --presets env --ignore node_modules",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mzeecob/e-insurance-backend.git"
+  },
+  "keywords": [
+    "insurance",
+    "in",
+    "rwanda"
+  ],
+  "author": "Regis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mzeecob/e-insurance-backend/issues"
+  },
+  "homepage": "https://github.com/mzeecob/e-insurance-backend#readme",
+  "dependencies": {
+    "@babel/polyfill": "^7.7.0",
+    "@babel/runtime": "^7.7.6",
+    "bcrypt": "^5.0.0",
+    "config": "^3.3.1",
+    "custom-env": "^2.0.1",
+    "express": "^4.17.1",
+    "joi": "^17.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.25",
+    "mongoose-unique-validator": "^2.0.3"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.7.5",
+    "@babel/core": "^7.7.5",
+    "@babel/node": "^7.7.4",
+    "@babel/plugin-transform-async-to-generator": "^7.7.4",
+    "@babel/plugin-transform-runtime": "^7.7.6",
+    "@babel/preset-env": "^7.7.6",
+    "@babel/register": "^7.7.4",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "nodemon": "^2.0.4"
+  }
+}
