@@ -1,5 +1,5 @@
 {
-  "name": "EHR",
+  "name": "ehr",
   "version": "1.0.0",
   "description": "EHR is system which will easy the process of patient recording in health care organization like hospitals and heath centers",
   "main": "index.js",
