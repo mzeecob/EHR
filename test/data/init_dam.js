@@ -30,11 +30,11 @@ class DummyData {
 
             // add initual data
             this.createDummyData();
-            console.log(">>>New data have been Created")
+            console.log(">>>New data has been Created")
 
 
         } catch (error) {
-            throw error;
+            console.log(">>> initial data has been Created")
         }
 
         
