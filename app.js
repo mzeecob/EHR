@@ -1,8 +1,11 @@
-import express from 'express';
-import bodyParser from 'body-parser';
-import connect from "./config/db";
+import express from 'express'
+import bodyParser from 'body-parser'
+import path from 'path'
+import cookieParser from 'cookie-parser'
+import morgan from 'morgan'
+import connect from "./config/db"
 import api from './routes/api'
-import dotenv from "dotenv";
+import dotenv from "dotenv"
 dotenv.config();
 const app = express();
 
@@ -12,8 +15,16 @@ const app = express();
     * Middleware
     */
 
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+
+app.use(morgan('dev'));
+app.use(cookieParser());
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(bodyParser.urlencoded({extended: true}));
+
 
 // catch 400
 app.use((err, req, res, next) => {

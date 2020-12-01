@@ -6,11 +6,13 @@ import userRegisterRoute from './userRegister.route'
 
 const router = Router();
 
+router.get('/', function(req,res){
+    res.redirect('/login');
+});
 
-
+router.use('/login', userLoginRoute);
 router.use('/patients', patientRoute);
 router.use('/users', userRoute);
-router.use('/login', userLoginRoute);
 router.use('/register', userRegisterRoute);
 
 export default router;

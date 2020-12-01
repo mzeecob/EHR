@@ -13,7 +13,7 @@ class DummyData {
         await patient.save();
 
 
-        const user = new User({ firstname: 'Augistin', lastname: 'Mushumba', email: 'test1@gmail.com', phone: '456', password: auth.hashPassword('test1') });
+        const user = new User({ firstname: 'Augistin', lastname: 'Mushumba', email: 'test2@gmail.com', phone: '456', password: auth.hashPassword('test1') });
         await user.save();
 
 

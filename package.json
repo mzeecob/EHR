@@ -31,12 +31,16 @@
     "@babel/runtime": "^7.7.6",
     "bcrypt": "^5.0.0",
     "config": "^3.3.1",
+    "cookie-parser": "^1.4.5",
     "custom-env": "^2.0.1",
+    "ejs": "^3.1.5",
     "express": "^4.17.1",
     "joi": "^17.2.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.25",
-    "mongoose-unique-validator": "^2.0.3"
+    "mongoose-unique-validator": "^2.0.3",
+    "morgan": "^1.10.0",
+    "path": "^0.12.7"
   },
   "devDependencies": {
     "@babel/cli": "^7.7.5",

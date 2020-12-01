@@ -49,7 +49,7 @@ class AuthController {
    * @returns {Object[]} Response Object with its status
    */
   static async login(req, res) {
-    const { email, password } = req.body;
+    const { email, password } = req;
     const { error } = validate.validateAccount(email, password);
 
     if (error) {
@@ -64,9 +64,8 @@ class AuthController {
       }
       let isValidPwd = auth.isValidPassword(password, user.password);
       if (isValidPwd) {
-        response.send200(res, "Login Successful", {
-          token: auth.generateToken({ email: user.email })
-        });
+        return {user: user, token: auth.generateToken({ email: user.email })}
+        
       } else {
         response.send409(res, "Invalid Credentials");
       }
@@ -82,7 +81,7 @@ class AuthController {
    * @param {Object[]} res - Response
    * @returns {Object[]} Response Object with its status
    */
-  static async allUsers(req, res){
+static async allUsers(req, res){
     try{
         const users = await User.find({});
         if(!users){ 

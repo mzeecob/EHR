@@ -45,6 +45,27 @@ class PatientController{
         }
     }
 
+
+    /**
+   * get all patient
+   * @param {Object[]} req - Request
+   * @param {Object[]} res - Response
+   * @returns {Object[]} Response Object with its status
+   */
+static async allPatients(req, res){
+    try{
+        const patients = await Patient.find({});
+        if(!patients){ 
+            return response.send400(res, "NO patients found");
+        }
+        return patients;
+
+    } catch(err){
+        response.send500(res, "Internal Server Error, Try Again Later");
+        throw err;
+    }
+}
+
 }
 
 export default PatientController
