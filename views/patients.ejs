@@ -5,7 +5,7 @@
 <div class="container" style="margin-top: 10vh; margin-bottom: 5vh;">
 
     <div class="page-heading" style="padding-bottom: 4rem;">
-        <h1 style="float: left">Admin Dashboard</h1>
+        <h1 style="float: left">All patients</h1>
         <a href="/EN/blog/admin/add" class="btn btn-outline-primary" style="float: right">Add a Blog</a>
     </div>
 
@@ -19,7 +19,7 @@
         <% for(var i = 0; i < patients.length; i++) {%>
             <tr>
                 <td style="font-weight: bold"><%= patients[i].firstname %> <%= patients[i].lastname %></td>
-                <td> <a class="btn" href="/patients/<%= patients[i]._id %>/edit" >Edit</a></td>
+                <td> <a class="btn" href="/patients/<%= patients[i]._id %>" >Edit</a></td>
 
             </tr>
         <% }%>

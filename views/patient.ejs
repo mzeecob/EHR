@@ -1,3 +1,72 @@
-<div>
-    one patient
+<link rel="stylesheet" type="text/css" href="/vendor/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+
+<div class="container" style="margin-top: 10vh; margin-bottom: 5vh;">
+
+    <h1 style="margin-bottom: 5rem;">
+        Patient Record
+    </h1>
+
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+            <form role="form" method="post" action="/patients/<%= patient._id %>">
+
+                <div class="control-group" style="display: none;">
+                    <div class="form-group floating-label-form-group controls">
+                        <label>id</label>
+                        <input type="text" name="id"  class="form-control" readonly value="<%= patient._id %>" >
+                    </div>
+                </div>
+
+            <div class="control-group">
+                <div class="form-group floating-label-form-group controls">
+                    <label>First  Name</label>
+                    <input type="text" name="firstname"  class="form-control" readonly value="<%= patient.firstname %>" >
+                </div>
+            </div>
+        
+            <div class="control-group">
+                <div class="form-group floating-label-form-group controls">
+                    <label>Last Name</label>
+                    <input type="text" name="lastname" class="form-control" readonly value="<%= patient.lastname %>">
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="form-group floating-label-form-group controls">
+                    <label>Gender</label>
+                    <input type="text" name="gender" class="form-control" readonly value="<%= patient.gender %>">
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="form-group floating-label-form-group controls">
+                    <label>Email</label>
+                    <input type="text" name="email" class="form-control" readonly value="<%= patient.email %>">
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="form-group floating-label-form-group controls">
+                    <label>Phone</label>
+                    <input type="text" name="phone" class="form-control" readonly value="<%= patient.phone %>">
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="form-group floating-label-form-group controls">
+                    <label>Record</label>
+                    <textarea name="record" cols="75" rows="10"  value=""> <%= patient.record %> </textarea>
+                </div>
+            </div>
+
+           
+
+            <div class="form-group my-4 text-center">
+                <button type="submit" class="btn btn-primary">Save Changes</button>
+            </div>
+        </form>
+        <div class="form-group my-4 text-center">
+            <a href="/patients">
+                <button class="btn btn-danger">Back</button>
+            </a>
+        </div>
+    </div>
+</div>
 </div>
