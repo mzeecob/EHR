@@ -1,0 +1,54 @@
+<link rel="stylesheet" type="text/css" href="/vendor/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+
+<div class="container" style="margin-top: 10vh; margin-bottom: 5vh;">
+
+    <h1 style="margin-bottom: 5rem;">
+        Patient Record
+    </h1>
+
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+            <form role="form" >
+
+                <div class="control-group">
+                    <div class="form-group floating-label-form-group controls">
+                        <label>Hospital</label>
+                        <input type="text"  class="form-control" readonly value="<%= record.hospital %>" >
+                    </div>
+                </div>
+
+            <div class="control-group">
+                <div class="form-group floating-label-form-group controls">
+                    <label>Doctor Name</label>
+                    <input type="text"  class="form-control" readonly value="DR <%= record.doctorName %>" >
+                </div>
+            </div>
+
+            <div class="control-group">
+                <div class="form-group floating-label-form-group controls">
+                    <label>Doctor Name</label>
+                    <input type="text"  class="form-control" readonly value="<%= record.doctorName %>" >
+                </div>
+            </div>
+        
+          
+            <div class="control-group">
+                <div class="form-group floating-label-form-group controls">
+                    <label>Patient Treatment Details</label>
+                    <textarea name="record" cols="75" rows="10" readonly >   <%= record.details %> </textarea>
+                </div>
+            </div>
+
+           
+
+            
+        </form>
+        <div class="form-group my-4 text-center">
+            <a onclick="history.back()">
+                <button class="btn btn-danger">Back</button>
+            </a>
+        </div>
+    </div>
+</div>
+</div>

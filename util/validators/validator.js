@@ -25,10 +25,8 @@ class Validator {
         minDomainSegments: 2,
         tlds: { allow: ["com", "rw", "fr"] }
       }),
-      phone: Joi.string().length(10).pattern(/^[0-9]+$/).required(),
-      password: Joi.string()
-        .regex(/^[a-zA-Z0-9]{3,30}$/)
-        .required()
+      gender: Joi.string().required(),
+      phone: Joi.string().length(10).pattern(/^[0-9]+$/).required(),      
     });
     return userSchema.validate(user);
   }

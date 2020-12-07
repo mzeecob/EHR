@@ -7,20 +7,20 @@
     <div style="padding-bottom: 5rem;"><a href="/" class="btn btn-outline-primary" style="float: right">Log Out</a></div>
     <div class="page-heading" style="padding-bottom: 4rem;">
         <h1 style="float: left">All patients</h1>
-        <!-- <a href="/EN/blog/admin/add" class="btn btn-outline-primary" style="float: right">Add a Blog</a> -->
+        <a href="/reception/register" class="btn btn-outline-primary" style="float: right">Add a pattient</a>
     </div>
 
     
     <table style="width:100%">
         <tr>
             <th>Patients</th>
-            <th>Medical History</th>
+
         </tr>
     
         <% for(var i = 0; i < patients.length; i++) {%>
             <tr>
                 <td style="font-weight: bold"><%= patients[i].firstname %> <%= patients[i].lastname %></td>
-                <td> <a class="btn" href="/patients/newRecord/<%= patients[i]._id %>" >New</a> <a class="btn" href="/patients/records/<%= patients[i]._id %>/" >Previous</a> </td>
+
 
 
             </tr>

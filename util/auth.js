@@ -20,17 +20,7 @@ class Auth {
     return bcrypt.hashSync(password, 10);
   }
 
-  static async getAuthUser(value) {
-    const user = await User.findOne({ _id: value.owner });
-
-
-    if (!user) {
-      response.send401(res, "User not authorized");
-      return false;
-    }
-
-    return user;
-  }
+  
 }
 
 export default Auth;

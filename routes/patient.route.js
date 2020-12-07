@@ -1,28 +1,51 @@
 import express from 'express';
 import patientController from '../controllers/patientController'
+import Auth from '../util/auth';
 var router = express.Router();
 
 router.get("/", async function(req, res, next) {
     const patients = await patientController.allPatients()
+    const records = await patientController.getAllRecords()
+
     if (patients) {
-        res.render("./patients", {'patients': patients})
+        res.render("./patients", {'patients': patients, 'records': records})
     }
 
 })
 
-
-router.get("/:slug", async (req, res, next)=>{
+router.get("/newRecord/:slug", async (req, res, next)=>{
     const patient = await patientController.onePatient(req.params.slug)
+
     if (patient){
-        res.render("./patient", {'patient': patient})
+        res.render("./newRecord", {'patient': patient})
     }
 })
 
-router.post("/:slug", async (req, res, next)=>{
-    console.log(req.body.id);
-    console.log(req.body.record);
-    await patientController.updatePatient(req.body.id, req.body.record)
-    res.redirect("/patients")
+router.post("/newRecord/:slug", async (req, res, next)=>{
+    console.log(req.body);
+
+    if ( await patientController.createRecord(req.body)) {
+        
+        res.redirect("/patients")
+
+    }
+   
+})
+
+router.get("/records/:slug/", async (req, res, next)=>{
+    const patient = await patientController.onePatient(req.params.slug)
+    const records = await patientController.getAllRecords(patient._id)
+    console.log(records);
+    if (records) {
+        res.render("./records", {'records': records, 'patient': patient})
+    }
+})
+
+router.get("/record/:slug", async (req, res, next)=>{
+    const record = await patientController.getOneRecord(req.params.slug)
+    if (record) {
+        res.render("./record", {'record': record})
+    }
 })
 
 

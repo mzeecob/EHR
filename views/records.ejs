@@ -1,0 +1,35 @@
+<link rel="stylesheet" type="text/css" href="/vendor/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+
+
+<div class="container" style="margin-top: 10vh; margin-bottom: 5vh;">
+
+    <div class="page-heading" style="padding-bottom: 4rem;">
+        <h1 style="float: left">All Records of <%= patient.firstname %> <%= patient.lastname %> </h1>
+        <!-- <a href="/EN/blog/admin/add" class="btn btn-outline-primary" style="float: right">Add a Blog</a> -->
+    </div>
+
+    
+    <table style="width:100%">
+        <tr>
+            <th>Records on</th>
+            <th>Action</th>
+        </tr>
+    
+        <% for(var i = 0; i < records.length; i++) {%>
+            <tr>
+                <td style="font-weight: bold"><%= records[i].createdAt %></td>
+                <td> <a class="btn" href="/patients/record/<%= records[i]._id %>" >view</a> </td>
+
+
+            </tr>
+        <% }%>
+    
+    </table>
+
+    <div class="form-group my-4 text-center">
+        <a onclick="history.back()">
+            <button class="btn btn-danger">Back</button>
+        </a>
+    </div>
+</div>

@@ -49,6 +49,8 @@ class AuthController {
    * @returns {Object[]} Response Object with its status
    */
   static async login(req, res) {
+
+
     const { email, password } = req;
     const { error } = validate.validateAccount(email, password);
 
@@ -57,10 +59,10 @@ class AuthController {
     }
 
     try {
-      let user = await User.findOne({ email });
-
+      
+      let user = await User.findOne({email: email });
       if (!user) {
-        return response.send409(res, "Invalid Credentials");
+        return response.send409(res, "User Not Found");
       }
       let isValidPwd = auth.isValidPassword(password, user.password);
       if (isValidPwd) {

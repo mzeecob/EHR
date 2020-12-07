@@ -8,7 +8,7 @@ var PatientSchema = new mongoose.Schema({
     email: {type: String, lowercase: true, unique: true},
     gender: {type: String, required: true},
     phone: {type: String, required: true},
-    record: {type: String},
+
 }, {timestamps: true});
 
 
