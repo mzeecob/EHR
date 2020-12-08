@@ -13,11 +13,14 @@ class DummyData {
         await patient.save();
 
 
-        const user = new User({ firstname: 'Augistin', lastname: 'Mushumba', email: 'test2@gmail.com', phone: '456', password: auth.hashPassword('test2'), role: "doctor" });
-        await user.save();
+        const doctor = new User({ firstname: 'Augistin', lastname: 'Mushumba', email: 'test2@gmail.com', phone: '456', password: auth.hashPassword('test2'), role: "doctor" });
+        await doctor.save();
 
-        const user1 = new User({ firstname: 'Elie', lastname: 'Kamanzi', email: 'test1@gmail.com', phone: '590', password: auth.hashPassword('test1'), role: "receptionist" });
-        await user1.save();
+        const receptionist = new User({ firstname: 'Elie', lastname: 'Kamanzi', email: 'test1@gmail.com', phone: '590', password: auth.hashPassword('test1'), role: "receptionist" });
+        await receptionist.save();
+
+        const admin = new User({ firstname: 'Elie', lastname: 'Kamanzi', email: 'test1@gmail.com', phone: '590', password: auth.hashPassword('test1'), role: "admin" });
+        await admin.save();
 
         const patientTo = await Patient.findOne({email: "test3@gmail.com"})
         const record = new Record({ patient: patientTo._id, hospital: "Kibagabaga hospital", doctorName: "Kalisa Ange", details: "abdominal pain"});
