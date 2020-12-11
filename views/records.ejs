@@ -17,8 +17,13 @@
         </tr>
     
         <% for(var i = 0; i < records.length; i++) {%>
+            <% 
+                              <!-- strim to have date only -->
+                                  var str = records[i].createdAt.toString();
+                                  var date = str.slice(0, 21); 
+                              %>
             <tr>
-                <td style="font-weight: bold"><%= records[i].createdAt %></td>
+                <td style="font-weight: bold"><%= date %></td>
                 <td> <a class="btn" href="/patients/record/<%= records[i]._id %>" >view</a> </td>
 
 
