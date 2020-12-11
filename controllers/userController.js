@@ -84,17 +84,14 @@ class AuthController {
    * @returns {Object[]} Response Object with its status
    */
 static async allUsers(req, res){
-    try{
+    
         const users = await User.find({});
         if(!users){ 
             return response.send400(res, "NO users found");
         }
-        return response.send200(res, "users found", users);
+        return  users;
 
-    } catch(err){
-        response.send500(res, "Internal Server Error, Try Again Later");
-        throw err;
-    }
+    
 }
 
 
