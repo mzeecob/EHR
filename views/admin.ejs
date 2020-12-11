@@ -1,0 +1,32 @@
+<link rel="stylesheet" type="text/css" href="/vendor/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+
+
+<div class="container" style="padding-top: 5rem; margin-bottom: 5vh;">
+
+    <div style="padding-bottom: 5rem;"><a href="/" class="btn btn-outline-primary" style="float: right">Log Out</a></div>
+    <div class="page-heading" style="padding-bottom: 4rem;">
+        <h1 style="float: left">Admin Dashboard</h1>
+        <a href="/reception" class="btn btn-outline-primary" style="float: right">View Patients list</a>
+        <a href="/admin/addStaff" class="btn btn-outline-primary" style="float: right; margin-right: 2rem;">Add a Staff</a>
+    </div>
+
+    
+    <table style="width:100%">
+        <tr>
+            <th>Staff</th>
+            <th>Roles</th>
+
+        </tr>
+    
+        <% for(var i = 0; i < users.length; i++) {%>
+            <tr>
+                <td style="font-weight: bold"><%= users[i].firstname %> <%= users[i].lastname %></td>
+
+                <td style="font-weight: bold"><%= users[i].role %> </td>
+
+            </tr>
+        <% }%>
+    
+    </table>
+</div>
