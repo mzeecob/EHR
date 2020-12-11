@@ -19,6 +19,7 @@ class Validator {
 
   static validatePatient(user) {
     let userSchema = Joi.object({
+      NID: Joi.string().length(10).pattern(/^[0-9]+$/).required(),      
       firstname: Joi.string().required(),
       lastname: Joi.string().required(),
       email: Joi.string().email({

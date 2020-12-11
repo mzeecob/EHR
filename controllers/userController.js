@@ -48,6 +48,9 @@ class AuthController {
    * @param {Object[]} res - Response
    * @returns {Object[]} Response Object with its status
    */
+
+   
+
   static async login(req, res) {
 
 
@@ -75,6 +78,7 @@ class AuthController {
       throw err;
     }
   }
+  
 
 
   /**

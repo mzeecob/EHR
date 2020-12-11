@@ -16,7 +16,7 @@ class PatientController{
    * @returns {Object[]} Response Object with its status
    */
   static async newPatient(req, res) {
-    const { error, value } = validate.validateUser(req.body);
+    const { error, value } = validate.validatePatient(req.body);
 
     if (error) {
       return response.send400(res, error.details[0].message);
@@ -78,7 +78,8 @@ class PatientController{
     static async createRecord(record){
         const newRecord = new Record(record);
         await newRecord.save(function (err) {
-            if (err) return handleError(err);
+            if (err) console.log(err); 
+
         })
         return newRecord
     }

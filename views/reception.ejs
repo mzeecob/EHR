@@ -13,12 +13,14 @@
     
     <table style="width:100%">
         <tr>
-            <th>Patients</th>
+            <th>National ID</th>
+            <th>Patient Name</th>
 
         </tr>
     
         <% for(var i = 0; i < patients.length; i++) {%>
             <tr>
+                <td style="font-weight: bold"><%= patients[i].NID %></td>
                 <td style="font-weight: bold"><%= patients[i].firstname %> <%= patients[i].lastname %></td>
 
 

@@ -1,5 +1,6 @@
 import express from 'express';
 import patientController from '../controllers/patientController'
+import userController from '../controllers/userController'
 import Auth from '../util/auth';
 var router = express.Router();
 
@@ -22,7 +23,6 @@ router.get("/newRecord/:slug", async (req, res, next)=>{
 })
 
 router.post("/newRecord/:slug", async (req, res, next)=>{
-    console.log(req.body);
 
     if ( await patientController.createRecord(req.body)) {
         
